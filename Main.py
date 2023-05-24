@@ -49,11 +49,12 @@ def plot_raw_data():
 	st.plotly_chart(fig)
 	
 plot_raw_data()
-
+'''
 st.write(data)
 data = pd.DataFrame(data)
 data = data[['open','close']]
 st.bar_chart(data)
+'''
 
 df_train = data[['Date','Close']]
 df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
