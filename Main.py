@@ -1,26 +1,30 @@
 import streamlit as st
 from datetime import date
-
+import matplotlib.pyplot as plt
 import yfinance as yf
 from prophet import Prophet
 from prophet.plot import plot_plotly
 import plotly.graph_objs as go
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import LinearRegression
 #import news
 #import community
 
 START = "2015-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
 
-st.title('Smart Invest AI')
+st.title('Smart Invest AI') 
+
+st.header('Stock prediction System with Machine Learning using Streamlit ')
+st.write('This data is collected from yahoo finance andthe prediction is based on the past data of the stock')
 
 
+#stock1 = ('GOOG', 'AAPL', 'MSFT', 'GME')
+#selected_stock = st.selectbox('Select dataset for Infomation Tech prediction', stock1)
 
-stocks = ('GOOG', 'AAPL', 'MSFT', 'GME')
-selected_stock = st.selectbox('Select dataset for Infomation Tech prediction', stocks)
 
-stocks = ('UNH', 'JNJ', 'LLY', 'MRK')
+stocks = ('UNH', 'JNJ', 'LLY', 'MRK','ABT','ELV','ZTS','SYK','CVS','GILD')
 selected_stock = st.selectbox('Select dataset for  Healthcare prediction', stocks)
 
 n_years = st.slider('Years of prediction:', 1, 4)
@@ -49,20 +53,35 @@ def plot_raw_data():
 	st.plotly_chart(fig)
 	
 plot_raw_data()
-'''
-st.write(data)
-data = pd.DataFrame(data)
-data = data[['open','close']]
-st.bar_chart(data)
-'''
+
+#st.write(data)
+#data = pd.DataFrame(data)
+#data = data[['open','close']]
+#st.bar_chart(data)
 
 df_train = data[['Date','Close']]
-df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
+df_train = df_train.rename(columns={"Date": "dates", "Close": "y"})
+
+X = data[['Open', 'High', 'Low', 'Close', 'Volume']]
+y = data['Adj Close']
+
+model = LinearRegression()
+model.fit(X, y)
+
+# Predict the stock price
+prediction = model.predict([[100, 200, 300, 400, 500]])
+
+# Display the prediction
+st.write('**The predicted stock price is:**', prediction)
+
+
+
 
 m = Prophet()
 m.fit(df_train)
 future = m.make_future_dataframe(periods=period)
 forecast = m.predict(future)
+
 
 st.subheader('Forecast data')
 st.write(forecast.tail())
@@ -70,6 +89,10 @@ st.write(forecast.tail())
 st.write(f'Forecast plot for {n_years} years')
 fig1 = plot_plotly(m, forecast)
 st.plotly_chart(fig1)
+#st.plotly_chart(fig2)
+
+#st.pyplot(fig1)
+
 
 st.write("Forecast components")
 fig2 = m.plot_components(forecast)
