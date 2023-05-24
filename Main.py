@@ -5,7 +5,8 @@ import yfinance as yf
 from prophet import Prophet
 from prophet.plot import plot_plotly
 import plotly.graph_objs as go
-
+import numpy as np
+import pandas as pd
 #import news
 #import community
 
@@ -17,7 +18,10 @@ st.title('Smart Invest AI')
 
 
 stocks = ('GOOG', 'AAPL', 'MSFT', 'GME')
-selected_stock = st.selectbox('Select dataset for prediction', stocks)
+selected_stock = st.selectbox('Select dataset for Infomation Tech prediction', stocks)
+
+stocks = ('UNH', 'JNJ', 'LLY', 'MRK')
+selected_stock = st.selectbox('Select dataset for  Healthcare prediction', stocks)
 
 n_years = st.slider('Years of prediction:', 1, 4)
 period = n_years * 365
@@ -45,6 +49,11 @@ def plot_raw_data():
 	st.plotly_chart(fig)
 	
 plot_raw_data()
+
+st.write(data)
+data = pd.DataFrame(data)
+data = data[['open','close']]
+st.bar_chart(data)
 
 df_train = data[['Date','Close']]
 df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
