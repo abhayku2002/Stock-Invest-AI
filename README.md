@@ -7,3 +7,4 @@ Such a system would be valuable for investors and traders who want to make infor
 decisions about buying, selling, or holding stocks, as well as for ﬁnancial analysts who want
 to provide accurate predictions and insights to their clients.
 
+https://drive.google.com/file/d/13RvHoMvsGeaGZi660dRAt8_DtIxpbKQ9/view?usp=sharing
