@@ -9,3 +9,12 @@ to provide accurate predictions and insights to their clients.
 
 
 
+<img width="5996" alt="Untitled (6)" src="https://github.com/abhayku2002/Stock-Invest-AI/assets/34162485/8181ae4d-e7cb-4e34-84bf-2bad204d09fe">
+
+# Frameworks/Technologies
+Data collection and preprocessing: Python (Pandas and NumPy)
+Machine learning libraries: Scikit-learn, Keras, and TensorFlow
+Database: MySQL, PostgreSQL, and MongoDB
+Web application framework: Django
+Cloud services: AWS or GCP
+Version control: Git and GitHub
