@@ -8,5 +8,4 @@ decisions about buying, selling, or holding stocks, as well as for ﬁnancial an
 to provide accurate predictions and insights to their clients.
 
 
-https://github.com/abhayku2002/Stock-Invest-AI/assets/34162485/04cb5b1f-522d-40f9-812b-5c7d3ca4f841
 
