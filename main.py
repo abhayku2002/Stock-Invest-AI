@@ -15,13 +15,13 @@ TODAY = date.today().strftime("%Y-%m-%d")
 st.title('Smart Invest AI') 
 
 st.header('Stock prediction System with Machine Learning using Streamlit ')
-st.write('This data is collected from yahoo finance andthe prediction is based on the past data of the stock')
+st.write('This data is collected from yahoo finance and the prediction is based on the past data of the stock')
 
 
-stocks = ('UNH', 'JNJ', 'LLY', 'MRK','ABT','ELV','ZTS','SYK','CVS','GILD')
+stocks = ('UNH', 'JNJ', 'LLY', 'MRK','ABT','ELV','ZTS','SYK','CVS','GILD','MDT')
 selected_stock = st.selectbox('Select dataset for  Healthcare prediction', stocks)
 
-n_years = st.slider('Years of prediction:', 1, 4)
+n_years = st.slider('Years of prediction:', 1, 5)
 period = n_years * 365
 
 
@@ -36,12 +36,19 @@ data_load_state = st.text('Loading data...')
 data = load_data(selected_stock)
 data_load_state.text('Loading data... done!')
 
-st.subheader('Raw data')
+st.subheader('Raw data : First 5 entries')
+st.write(data.head())
+
+st.subheader('Raw data : Last 5 entries')
 st.write(data.tail())
+
+st.subheader('Dataset Infomation')
+st.write(data.describe())
+
 
 def plot_raw_data():
 	fig = go.Figure()
-	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="stock_open",line_color='orange'))
+	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="stock_open",line_color='red'))
 	fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name="stock_close",line_color='green'))
 	fig.layout.update(title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=True)
 	st.plotly_chart(fig)
@@ -70,13 +77,19 @@ future = m.make_future_dataframe(periods=period)
 forecast = m.predict(future)
 
 
-st.subheader('Forecast data')
+st.subheader('Forecast data : First 5 Entries ')
+st.write(forecast.head())
+
+st.subheader('Forecast data : last 5 Entries ')
 st.write(forecast.tail())
     
 st.write(f'Forecast plot for {n_years} years')
 fig1 = plot_plotly(m, forecast)
 st.plotly_chart(fig1)
+#---09st.plotly_chart(fig2)
+
 
 st.write("Forecast components")
 fig2 = m.plot_components(forecast)
 st.write(fig2)
+
