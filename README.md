@@ -7,4 +7,6 @@ Such a system would be valuable for investors and traders who want to make infor
 decisions about buying, selling, or holding stocks, as well as for ﬁnancial analysts who want
 to provide accurate predictions and insights to their clients.
 
-https://drive.google.com/file/d/13RvHoMvsGeaGZi660dRAt8_DtIxpbKQ9/view?usp=sharing
+
+https://github.com/abhayku2002/Stock-Invest-AI/assets/34162485/04cb5b1f-522d-40f9-812b-5c7d3ca4f841
+
