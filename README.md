@@ -7,6 +7,7 @@ Such a system would be valuable for investors and traders who want to make infor
 decisions about buying, selling, or holding stocks, as well as for ﬁnancial analysts who want
 to provide accurate predictions and insights to their clients.
 
+https://github.com/abhayku2002/Stock-Invest-AI/assets/34162485/492ad870-45fd-47e2-9257-03e86b7faeb3
 
 
 <img width="5996" alt="Untitled (6)" src="https://github.com/abhayku2002/Stock-Invest-AI/assets/34162485/8181ae4d-e7cb-4e34-84bf-2bad204d09fe">
@@ -15,8 +16,10 @@ to provide accurate predictions and insights to their clients.
 Data collection and preprocessing: Python (Pandas and NumPy)
 Machine learning libraries: Scikit-learn, Keras, and TensorFlow
 Database: MySQL, PostgreSQL, and MongoDB
+
+
+
 Web application framework: Django
 Cloud services: AWS or GCP
 Version control: Git and GitHub
 
-https://drive.google.com/file/d/18qYT5zJBM313qDgyWOYEpxoITOE_RHnG/view?usp=sharing
