@@ -18,3 +18,5 @@ Database: MySQL, PostgreSQL, and MongoDB
 Web application framework: Django
 Cloud services: AWS or GCP
 Version control: Git and GitHub
+
+https://drive.google.com/file/d/18qYT5zJBM313qDgyWOYEpxoITOE_RHnG/view?usp=sharing
