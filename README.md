@@ -24,4 +24,5 @@ Database: MySQL, PostgreSQL, and MongoDB
 Web application framework: Django
 Cloud services: AWS or GCP
 Version control: Git and GitHub
+Programming Language: Python
 
